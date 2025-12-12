@@ -13,6 +13,7 @@ services:
             - 127.0.0.1:80:8888
         volumes:
             - ./apache/apache2.conf:/etc/apache2/apache2.conf:ro
+            - ./apache/ports.conf:/etc/apache2/ports.conf:ro
 
 networks:
     apache_net:
