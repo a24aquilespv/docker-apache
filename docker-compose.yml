@@ -1,0 +1,22 @@
+services:
+    apache:
+        build: ./apache
+        image: apache2_server
+        container_name: apache
+        hostname: apache
+        networks:
+            apache_net:
+                ipv4_address: 172.15.0.100
+                interface_name: enp0s3
+                mac_address: 02:50:41:00:00:01
+        ports: 
+            - 127.0.0.1:80:8888
+        volumes:
+            - ./apache/apache2.conf:/etc/apache2/apache2.conf:ro
+
+networks:
+    apache_net:
+        driver: bridge
+        ipam:
+            config:
+                - subnet: 172.15.0.0/24
