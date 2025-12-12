@@ -10,10 +10,12 @@ services:
                 interface_name: enp0s3
                 mac_address: 02:50:41:00:00:01
         ports: 
-            - 127.0.0.1:80:8888
+            - 127.0.0.1:8888:80
         volumes:
-            - ./apache/apache2.conf:/etc/apache2/apache2.conf:ro
-            - ./apache/ports.conf:/etc/apache2/ports.conf:ro
+            - ./apache/apache2.conf:/etc/apache2/apache2.conf
+            - ./apache/ports.conf:/etc/apache2/ports.conf
+            - ./apache/127.0.0.1_9000/index.html:/var/www/127.0.0.1_9000/index.html
+            - ./apache/127.0.0.1_9000/127.0.0.1_9000.conf:/etc/apache2/sites-available/127.0.0.1_9000.conf
 
 networks:
     apache_net:

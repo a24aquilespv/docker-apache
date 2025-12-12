@@ -45,3 +45,5 @@ chmod +x ~/set_apache_vars.sh
 #/usr/sbin/apache2
 #/usr/sbin/apache2ctl start
 #/etc/init.d/apache2 start
+
+ln -s '/etc/apache2/sites-available/127.0.0.1_9000.conf' '/etc/apache2/sites-enabled/127.0.0.1_9000.conf'

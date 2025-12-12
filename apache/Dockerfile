@@ -15,8 +15,10 @@ RUN apt update && apt install -y \
     plocate \
     lsof
 
-EXPOSE 8888/TCP
-
 COPY --chown=root:www-data --chmod=750 ./entrypoint.sh /apache/entrypoint.sh
+
 # ENTRYPOINT [ "/usr/bin/bash", "-c", "/apache/entrypoint.sh" ]
 ENTRYPOINT [ "/apache/entrypoint.sh" ]
+
+EXPOSE 8888/TCP
+WORKDIR /etc/apache2
