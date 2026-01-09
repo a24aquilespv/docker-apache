@@ -13,6 +13,7 @@ RUN apt update && apt install -y \
     iputils-ping \
     bind9-dnsutils \
     plocate \
+    file \
     lsof
 
 COPY --chown=root:www-data --chmod=750 ./entrypoint.sh /apache/entrypoint.sh
