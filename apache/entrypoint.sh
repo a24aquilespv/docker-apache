@@ -37,6 +37,9 @@ chmod +x ~/set_apache_vars.sh
 # It is designed to help the administrator control the functioning of the
 # Apache httpd daemon
 
+# Enlaces simbólicos virtual hosts
+ln -s /etc/apache2/sites-available/127.0.0.1_9000.conf /etc/apache2/sites-enabled/127.0.0.1_9000.conf
+
 # Ejecutar el servidor de apache en foreground
 # Log level: info
 # https://httpd.apache.org/docs/2.4/mod/core.html#loglevel
@@ -46,4 +49,4 @@ chmod +x ~/set_apache_vars.sh
 #/usr/sbin/apache2ctl start
 #/etc/init.d/apache2 start
 
-ln -s '/etc/apache2/sites-available/127.0.0.1_9000.conf' '/etc/apache2/sites-enabled/127.0.0.1_9000.conf'
+
