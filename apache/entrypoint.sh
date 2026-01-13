@@ -41,15 +41,15 @@ chmod +x ~/set_apache_vars.sh
 ln -s /etc/apache2/sites-available/127.0.0.1_9000.conf /etc/apache2/sites-enabled/127.0.0.1_9000.conf
 
 # Cambiar la ruta por defecto para servir contenido a /web
-#apache2_document_root="/web"
-#
-#/usr/bin/mkdir -p "${apache2_document_root}"
-#if [[ -d "${apache2_document_root}" ]]; then
-#    /usr/bin/chown -R root:www-data "${apache2_document_root}"
-#    /usr/bin/chmod -R 777 "${apache2_document_root}"
-#fi
-#
-#/usr/bin/sed -i 's/DocumentRoot \/var\/www\/html/DocumentRoot \/web/' /etc/apache2/sites-available/000-default.conf
+# apache2_document_root="/web"
+
+/usr/bin/mkdir -p "${apache2_document_root}"
+if [[ -d "${apache2_document_root}" ]]; then
+    /usr/bin/chown -R root:www-data "${apache2_document_root}"
+    /usr/bin/chmod -R 777 "${apache2_document_root}"
+fi
+
+/usr/bin/sed -i 's/DocumentRoot \/var\/www\/html/DocumentRoot \/web/' /etc/apache2/sites-available/000-default.conf
 
 
 # Directorio public_html

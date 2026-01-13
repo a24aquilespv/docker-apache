@@ -16,6 +16,7 @@ services:
         volumes:
             - ./apache/apache2.conf:/etc/apache2/apache2.conf
             - ./apache/ports.conf:/etc/apache2/ports.conf
+            - ./apache/000-default.conf:/etc/apache2/sites-available/000-default.conf
             - ./apache/127.0.0.1_9000/index.html:/var/www/127.0.0.1_9000/index.html
             - ./apache/127.0.0.1_9000/127.0.0.1_9000.conf:/etc/apache2/sites-available/127.0.0.1_9000.conf
             - ./apache/web/index.html:/web/index.html
