@@ -2,6 +2,7 @@ FROM debian:13
 
 RUN apt update && apt install -y \
     apache2 \
+    php \
     neovim \
     nano \
     man-db \
